@@ -97,22 +97,22 @@
 
 //fibonacci
 
-function memoFibonacci(n, memo) {
-    memo = memo || {}
-    if(memo[n]){
-        console.log('[n]', n)
-        console.log('memo[n]', memo[n])
-        return memo[n]
-
-    }
-    if(n<=1){
-        return 1
-    }
-
-    return memo[n] = memoFibonacci(n-1, memo)+ memoFibonacci(n-2, memo)
-}
-
-console.log(memoFibonacci(10))
+// function memoFibonacci(n, memo) {
+//     memo = memo || {}
+//     if(memo[n]){
+//         console.log('[n]', n)
+//         console.log('memo[n]', memo[n])
+//         return memo[n]
+//
+//     }
+//     if(n<=1){
+//         return 1
+//     }
+//
+//     return memo[n] = memoFibonacci(n-1, memo)+ memoFibonacci(n-2, memo)
+// }
+//
+// console.log(memoFibonacci(10))
 
 // function fibonacci(n) {
 //     if(n<=1){
@@ -123,3 +123,20 @@ console.log(memoFibonacci(10))
 // }
 //
 // console.log(fibonacci(100))
+
+//event bubling and capturing/trickling
+
+ document.querySelector("#grandparent")
+     .addEventListener('click', ()=>{
+      console.log('grandparent clicked')
+     }, false)
+
+document.querySelector("#parent")
+    .addEventListener('click', ()=>{
+     console.log('parent clicked')
+    }, false)
+
+document.querySelector("#child")
+    .addEventListener('click', ()=>{
+     console.log('child clicked')
+    }, false)
